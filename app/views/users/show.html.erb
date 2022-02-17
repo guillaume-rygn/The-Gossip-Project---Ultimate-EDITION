@@ -1,0 +1,25 @@
+<div class="container" style="height:80vh">
+  <h1>Voici la page de l'auteur : <span style="color:#8064A2"><%= @user.first_name%>  <%= @user.last_name%></span> </h1>
+  <h2 class="mx-4">"<em><%= @user.description %></em>"</h2>
+  <br>
+  <h4>Informations:</h4>
+  <ul style="color:#8064A2">
+    <li><p>email : <%= @user.email %></p></li>
+    <li><p>age : <%= @user.age %></p></li>
+    <li><p>ville : <a href="<%= city_path(@user.city_id) %>"><%= @user.city.name %></a></p></li>
+  </ul>
+  <br>
+  <h3 class="mb-5">Ses potins :</h3>
+
+  <div class="container row justify-content-center">
+    <% @gossip.each do |gossip| %>
+        <div class="card mb-3 mx-4 card-home" style="width: 18rem;">
+          <div class="card-body">
+            <p class="card-text" style="color:#8064A2"><em><%= gossip.title %></em></p>
+            <p class="card-text"><em><%= gossip.content %></em></p>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  <a href="<%= root_path %>" class="btn btn-primary mt-3 rounded-pill">👈 Revenir au menu</a>
+</div>

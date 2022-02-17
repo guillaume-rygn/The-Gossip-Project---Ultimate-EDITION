@@ -6,7 +6,7 @@ require 'faker'
 User.destroy_all
 Gossip.destroy_all
 Tag.destroy_all
-Affiliation.destroy_all
+JoinTableGossipTag.destroy_all
 City.destroy_all
 
 
@@ -24,6 +24,7 @@ end
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     description: Faker::Lorem.sentence,
+    password_digest: Faker::Lorem.sentence,
     email: Faker::Internet.email,
     age: rand(10..99),
     city_id: City.all.sample.id
@@ -43,24 +44,22 @@ end
     title: Faker::Name.first_name,
     content: Faker::Lorem.paragraph,
     user_id: User.all.sample.id,
-    tag_id: Tag.all.sample.id
   );
 end
 
-#creation d'un user a plusieurs potin
-3.times do
-  gossip = Gossip.create!(
-    title: "Anthony",
-    content: Faker::Lorem.paragraph,
-    user_id: User.all.sample.id,
-    tag_id: Tag.all.sample.id
-  );
-end
 
 #Création de la table de jointure avec les gossips et les tags
 10.times do
-  affiliation = Affiliation.create!(
+  jointable = JoinTableGossipTag.create!(
     gossip_id: Gossip.all.sample.id,
     tag_id: Tag.all.sample.id
+  );
+end
+
+80.times do
+  comment = Comment.create!(
+    content: Faker::Lorem.paragraph,
+    gossip_id: Gossip.all.sample.id,
+    user_id: User.all.sample.id
   );
 end

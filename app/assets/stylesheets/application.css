@@ -10,6 +10,7 @@
   background-color: #8064A2 !important;
   color:#FFF !important;
   border-color: #8064A2 !important; 
+  border-radius: 10px;;
 }
 .nav-link {
   color: #8064A2 ;
@@ -64,7 +65,7 @@ a.btn-auteur:hover{
  .team4 ul li a:hover {
    -webkit-transform: translate3d(0px, -5px, 0px);
    transform: translate3d(0px, -5px, 0px);
-   color: #316ce8;
+   color: #8064A2;
  }
 
  .bastien{
@@ -80,7 +81,6 @@ a.btn-auteur:hover{
   box-shadow: 5px 5px 19px 1px rgba(0,0,0,0.36);
   transform: translateY(-10px);
  }
-
 
  /* CONTACT */
 
@@ -123,4 +123,32 @@ a.btn-auteur:hover{
 }
 .contact-form button:focus{
   box-shadow:none;
+}
+
+.button{
+    background-color: #FFF !important;
+    color: #8064A2;
+    border-radius: 25px;
+    padding: 5px 15px;
+    border: 1px solid #8064A2;
+    margin-left: 10px;
+}
+
+.button:hover{
+  background-color: #8064A2 !important;
+  color: #FFF;
+  border-radius: 25px;
+  padding: 5px 15px;
+  border: 1px solid #8064A2;
+  margin-left: 10px;
+}
+
+.area {
+  border-radius: 6px;
+  border: 1px solid #8064A2;
+}
+
+.dropdown-item:hover, .dropdown-item:focus{
+  background-color: #8064A2 !important;
+    color: #FFF !important;
 }

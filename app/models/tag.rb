@@ -1,4 +1,4 @@
 class Tag < ApplicationRecord
-  has_many :affiliations
-  has_many :gossips, through: :affiliations
+  has_many :join_table_gossip_tags
+  has_many :gossips, through: :join_table_gossip_tags
 end

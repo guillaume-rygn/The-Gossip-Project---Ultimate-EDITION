@@ -1,16 +1,19 @@
 <div class="container" style="height:80vh">
-  <h1>Voici la page de l'auteur : <span style="color:#8064A2"><%= @title%></span> </h1>
-  <h3 class="mb-5">Ses articles :</h3>
+  <h1 style="color:#8064A2"><%= @city.name%></h1>
+  <br>
+
+  <h3 class="mb-5">Les potins écrit depuis <span style="color:#8064A2"><%= @city.name%></span>:</h3>
 
   <div class="container row justify-content-center">
-    <% @gossips.each do |gossip| %>
-      <% if gossip.title == @title%>
+    <h1><% @gossip.each do |gossip| %></h1>
+    <% if gossip.user.city_id == @id.to_i %>
         <div class="card mb-3 mx-4 card-home" style="width: 18rem;">
           <div class="card-body">
+            <p class="card-text" style="color:#8064A2"><em><%= gossip.title %></em></p>
             <p class="card-text"><em><%= gossip.content %></em></p>
           </div>
         </div>
-      <% end %>
+    <% end %>
     <% end %>
   </div>
   <a href="<%= root_path %>" class="btn btn-primary mt-3 rounded-pill">👈 Revenir au menu</a>

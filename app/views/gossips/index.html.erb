@@ -1,0 +1,44 @@
+<h1 class="row justify-content-center mb-5"> Bienvenue <span class="row justify-content-center" style="color:#8064A2">
+<% if current_user %>
+<%= current_user.first_name %></span></h1>
+<% else %>
+sur The Gossip Project</h1>
+<% end %>
+
+
+<a href="gossips/new" class="row justify-content-center mb-5 col-12 btn btn-primary rounded-pill">Créer un potin</a>
+
+<p class="row justify-content-center mb-5" style="color:#C7C7F1"> Parcours le mur des gossips pour voir les dernières nouveautés</p>
+
+<div class="container row justify-content-center">
+<% @gossips.each do |gossip| %>
+
+<div class="card mb-3 mx-4 card-home" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title" style="color:#8064A2"><%= gossip.title %></h5>
+    <p class="card-text"><em><%= gossip.content %></em></p>
+    <div class="mb-2 col-6">
+    <% unless current_user%>
+    <img class="my-3" src="https://icones.pro/wp-content/uploads/2021/02/icone-de-coeur-rouge-1.png" width="30px">
+    
+    <% end %>
+    </div>
+    <p><%= Like.count{|like|like.gossip_id == gossip.id}%>  like</p>
+    <% if current_user%>
+          <% if Like.find_by(gossip_id: gossip.id)%>
+          
+          <a href="<%= gossip_like_path(gossip.id, gossip.id)%>" data-method="DELETE"><img class="mb-3" src="https://icones.pro/wp-content/uploads/2021/02/icone-de-coeur-rouge-1.png" width="30px"></a><br>
+        <%else%>
+          <%= form_tag gossip_likes_path(gossip.id) do%>
+                <%= hidden_field_tag 'like', nil, class: "form-control area"%>
+                <%= hidden_field_tag 'gossip_id', nil, class: "form-control area"%>
+                <button type="submit" class="button mb-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Heart_empty_font_awesome.svg/1200px-Heart_empty_font_awesome.svg.png" width="20px"></button>
+          <% end %>
+      <% end %>
+    <% end %>
+       <a href="<%= gossip_path(gossip.id)%>" class="btn btn-primary">Voir le potin</a>
+  </div>
+</div>
+  <% end %>
+
+</div>

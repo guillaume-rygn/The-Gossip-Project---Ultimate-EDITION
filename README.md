@@ -1,6 +1,6 @@
-# The Gossip Project  📸
+# The Gossip Project - Ultimate Version 📸🤯
 
-![The Gossip Project](https://i.imgur.com/MWGOGP0.gif)
+![The Gossip Project](https://i.imgur.com/yFgEC3o.gif)
 
 
 ## Installation ⚙️
@@ -13,7 +13,7 @@ $ bundle install
 
 ## Lancer le programme 🚦
 
-Il ne vous reste plus qu'à tester l'ensemble des relations de notre BDD depuis les pages views de l'application! 
+Il ne vous reste plus qu'à tester l'ensemble des fonctionnalités de l'application comme se connecter, aimer un post, publier, etc ! 
 
 ```ruby
 $ rails server 
@@ -27,9 +27,7 @@ Enjoy !
 Relance la base de données pour de nouveaux gossips
 
 ```ruby
-$ rails db:rollback #le faire le nombre de fois utile pour que tous les migrations soient down
-#vérifie que tout est down avec la commande $ rails db:migrate:status
-$ rails db:reset
+$ rake db:migrate VERSION=0 
 $ rails db:migrate
 $ rails db:seed
 ```
