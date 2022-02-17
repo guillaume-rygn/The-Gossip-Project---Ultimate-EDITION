@@ -1,6 +1,6 @@
 # The Gossip Project - Ultimate Version 📸🤯
 
-![The Gossip Project](https://i.imgur.com/yFgEC3o.gif)
+![The Gossip Project](https://i.imgur.com/MWGOGP0.gif)
 
 
 ## Installation ⚙️
