@@ -2,6 +2,9 @@
 
 ![The Gossip Project](https://i.imgur.com/5hOOuAk.gif)
 
+## WEB version 🌐
+
+Le site est en live ici 👉 [The Gossip Project](https://the-gossip-project-finale.herokuapp.com/)
 
 ## Installation ⚙️
 
