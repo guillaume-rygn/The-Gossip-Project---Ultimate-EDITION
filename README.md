@@ -22,7 +22,7 @@ $ rails server
 Rendez-vous ensuite sur le site 👉 [The Gossip Project](http://localhost:3000/)
 Enjoy !
 
-## Supprimer la BDD et la relance 🚦
+## Supprimer la BDD et la relancer 🚦
 
 Relance la base de données pour de nouveaux gossips
 
