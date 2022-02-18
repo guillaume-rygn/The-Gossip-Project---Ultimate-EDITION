@@ -13,7 +13,7 @@ $ bundle install
 
 ## Lancer le programme 🚦
 
-Il ne vous reste plus qu'à tester l'ensemble des fonctionnalités de l'application comme se connecter, aimer un post, publier, etc ! 
+Il ne vous reste plus qu'à tester l'ensemble des fonctionnalités de l'application comme se connecter, aimer un post, publier un post, etc ! 
 
 ```ruby
 $ rails server 
